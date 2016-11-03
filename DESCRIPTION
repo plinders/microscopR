@@ -1,0 +1,14 @@
+Package: microscopR
+Title: Data processing suite for micrographs
+Version: 1.0
+Authors@R: person("Peter", "Linders", email = "peter.linders@radboudumc.nl", role = c("aut", "cre"))
+Description: This package allows for the efficient importing of (confocal)
+    micrographs acquired on various microscopes. Following this, this package
+    supplies several functions (currently colocalization and ratiometric analysis)
+    to further process images.
+Depends:
+    R (>= 3.3.1)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
