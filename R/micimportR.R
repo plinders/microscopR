@@ -11,11 +11,6 @@
 
 micimportR <- function(dir) {
   #check if a dataset is already loaded in R buffer, if yes: remove
-  if (exists("micimportR_list") == TRUE)
-  {
-    rm("micimportR_list", envir = .GlobalEnv)
-  }
-
   #Set working directory to directory supplied, use directory name as filename for output files later
   folder_name <- basename(dir)
   setwd(dir)
@@ -87,7 +82,10 @@ micimportR <- function(dir) {
   }
 
   #Compile all extracted data and store in a global variable so other functions will be able to use it
-  micimportR_list <<- list("images_list" = images_list, "imgmeta" = imgmeta, "folder_name" = folder_name)
+  micimportR_list <- list("images_list" = images_list, "imgmeta" = imgmeta, "folder_name" = folder_name)
   #stop parallel cluster
   stopCluster(cl)
+  #return list of data
+  return(micimportR_list)
+
 }
